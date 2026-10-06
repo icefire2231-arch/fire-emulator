@@ -2,11 +2,21 @@
   "name": "fire-emulator",
   "version": "0.1.0",
   "description": "Fire Emulator",
+  "author": "icefire2231-arch",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder --publish never"
   },
   "devDependencies": {
-    "electron": "^33.0.0"
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.fire.emulator",
+    "productName": "Fire Emulator",
+    "files": ["main.js", "index.html", "package.json"],
+    "win": { "target": "nsis" },
+    "mac": { "target": "dmg" }
   }
 }
